@@ -113,104 +113,176 @@
         .footer-links a:hover {
             text-decoration: underline;
         }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            border: 2px solid #ff6600;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .language-selector select {
+            border: none;
+            background-color: transparent;
+            color: #ff6600;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        .language-selector select:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="es">🇪🇸 Español</option>
+            <option value="en">🇺🇸 English</option>
+        </select>
+    </div>
+    
     <div class="container">
         <div class="hero-section">
             <h1>3DCalc</h1>
-            <p>La calculadora definitiva para costes de impresión 3D</p>
+            <p data-es="La calculadora definitiva para costes de impresión 3D" data-en="The ultimate 3D printing cost calculator">La calculadora definitiva para costes de impresión 3D</p>
         </div>
         
         <div class="app-info">
-            <h3>Información de la Aplicación</h3>
-            <p><strong>Nombre:</strong> 3DCalc - Calculadora de Costes de Impresión 3D</p>
-            <p><strong>Desarrollador:</strong> SozoLabs</p>
-            <p><strong>Versión:</strong> 1.0.0</p>
+            <h3 data-es="Información de la Aplicación" data-en="Application Information">Información de la Aplicación</h3>
+            <p><strong data-es="Nombre:" data-en="Name:">Nombre:</strong> 3DCalc - <span data-es="Calculadora de Costes de Impresión 3D" data-en="3D Printing Cost Calculator">Calculadora de Costes de Impresión 3D</span></p>
+            <p><strong data-es="Desarrollador:" data-en="Developer:">Desarrollador:</strong> SozoLabs</p>
+            <p><strong data-es="Versión:" data-en="Version:">Versión:</strong> 1.0.0</p>
             <p><strong>Bundle ID:</strong> com.sozolabs.calc3D</p>
         </div>
 
-        <h2>¿Qué es 3DCalc?</h2>
-        <p>3DCalc es una aplicación móvil diseñada específicamente para makers, profesionales y entusiastas de la impresión 3D que necesitan calcular con precisión los costes de sus proyectos de impresión.</p>
+        <h2 data-es="¿Qué es 3DCalc?" data-en="What is 3DCalc?">¿Qué es 3DCalc?</h2>
+        <p data-es="3DCalc es una aplicación móvil diseñada específicamente para makers, profesionales y entusiastas de la impresión 3D que necesitan calcular con precisión los costes de sus proyectos de impresión." data-en="3DCalc is a mobile application designed specifically for makers, professionals and 3D printing enthusiasts who need to accurately calculate the costs of their printing projects.">3DCalc es una aplicación móvil diseñada específicamente para makers, profesionales y entusiastas de la impresión 3D que necesitan calcular con precisión los costes de sus proyectos de impresión.</p>
         
         <div class="highlight">
-            <strong>Privacidad Total:</strong> Todos tus datos se almacenan localmente en tu dispositivo. No enviamos información a servidores externos.
+            <strong data-es="Privacidad Total:" data-en="Total Privacy:">Privacidad Total:</strong> <span data-es="Todos tus datos se almacenan localmente en tu dispositivo. No enviamos información a servidores externos." data-en="All your data is stored locally on your device. We don't send information to external servers.">Todos tus datos se almacenan localmente en tu dispositivo. No enviamos información a servidores externos.</span>
         </div>
 
-        <h2>Características Principales</h2>
+        <h2 data-es="Características Principales" data-en="Main Features">Características Principales</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <h4>📊 Cálculos Precisos</h4>
-                <p>Calcula costes basados en peso del filamento, tiempo de impresión, electricidad y costes adicionales.</p>
+                <h4 data-es="📊 Cálculos Precisos" data-en="📊 Precise Calculations">📊 Cálculos Precisos</h4>
+                <p data-es="Calcula costes basados en peso del filamento, tiempo de impresión, electricidad y costes adicionales." data-en="Calculate costs based on filament weight, printing time, electricity and additional costs.">Calcula costes basados en peso del filamento, tiempo de impresión, electricidad y costes adicionales.</p>
             </div>
             <div class="feature-card">
-                <h4>💰 Gestión de Márgenes</h4>
-                <p>Añade márgenes de beneficio personalizables para tus proyectos comerciales.</p>
+                <h4 data-es="💰 Gestión de Márgenes" data-en="💰 Margin Management">💰 Gestión de Márgenes</h4>
+                <p data-es="Añade márgenes de beneficio personalizables para tus proyectos comerciales." data-en="Add customizable profit margins for your commercial projects.">Añade márgenes de beneficio personalizables para tus proyectos comerciales.</p>
             </div>
             <div class="feature-card">
-                <h4>📱 Multiplataforma</h4>
-                <p>Disponible para iOS, Android y Web con sincronización local.</p>
+                <h4 data-es="📱 Multiplataforma" data-en="📱 Cross-platform">📱 Multiplataforma</h4>
+                <p data-es="Disponible para iOS, Android y Web con sincronización local." data-en="Available for iOS, Android and Web with local synchronization.">Disponible para iOS, Android y Web con sincronización local.</p>
             </div>
             <div class="feature-card">
-                <h4>🌍 Multiidioma</h4>
-                <p>Soporte para español, inglés, francés, alemán, italiano, ruso y finlandés.</p>
+                <h4 data-es="🌍 Multiidioma" data-en="🌍 Multilingual">🌍 Multiidioma</h4>
+                <p data-es="Soporte para español, inglés, francés, alemán, italiano, ruso y finlandés." data-en="Support for Spanish, English, French, German, Italian, Russian and Finnish.">Soporte para español, inglés, francés, alemán, italiano, ruso y finlandés.</p>
             </div>
         </div>
 
-        <h2>Funcionalidades</h2>
-        <h3>Cálculo de Costes</h3>
+        <h2 data-es="Funcionalidades" data-en="Features">Funcionalidades</h2>
+        <h3 data-es="Cálculo de Costes" data-en="Cost Calculation">Cálculo de Costes</h3>
         <ul>
-            <li><strong>Coste de Material:</strong> Basado en peso y precio del filamento</li>
-            <li><strong>Tiempo de Impresión:</strong> Cálculo de costes por hora de impresión</li>
-            <li><strong>Costes Adicionales:</strong> Electricidad, mantenimiento, amortización</li>
-            <li><strong>Margen de Beneficio:</strong> Porcentaje personalizable para proyectos comerciales</li>
+            <li><strong data-es="Coste de Material:" data-en="Material Cost:">Coste de Material:</strong> <span data-es="Basado en peso y precio del filamento" data-en="Based on filament weight and price">Basado en peso y precio del filamento</span></li>
+            <li><strong data-es="Tiempo de Impresión:" data-en="Printing Time:">Tiempo de Impresión:</strong> <span data-es="Cálculo de costes por hora de impresión" data-en="Cost calculation per printing hour">Cálculo de costes por hora de impresión</span></li>
+            <li><strong data-es="Costes Adicionales:" data-en="Additional Costs:">Costes Adicionales:</strong> <span data-es="Electricidad, mantenimiento, amortización" data-en="Electricity, maintenance, depreciation">Electricidad, mantenimiento, amortización</span></li>
+            <li><strong data-es="Margen de Beneficio:" data-en="Profit Margin:">Margen de Beneficio:</strong> <span data-es="Porcentaje personalizable para proyectos comerciales" data-en="Customizable percentage for commercial projects">Porcentaje personalizable para proyectos comerciales</span></li>
         </ul>
 
-        <h3>Gestión de Proyectos</h3>
+        <h3 data-es="Gestión de Proyectos" data-en="Project Management">Gestión de Proyectos</h3>
         <ul>
-            <li>Historial completo de cálculos realizados</li>
-            <li>Nombres personalizados para cada proyecto</li>
-            <li>Fechas de creación y modificación</li>
-            <li>Exportación de resultados</li>
+            <li data-es="Historial completo de cálculos realizados" data-en="Complete history of calculations performed">Historial completo de cálculos realizados</li>
+            <li data-es="Nombres personalizados para cada proyecto" data-en="Custom names for each project">Nombres personalizados para cada proyecto</li>
+            <li data-es="Fechas de creación y modificación" data-en="Creation and modification dates">Fechas de creación y modificación</li>
+            <li data-es="Exportación de resultados" data-en="Results export">Exportación de resultados</li>
         </ul>
 
-        <h3>Configuración Avanzada</h3>
+        <h3 data-es="Configuración Avanzada" data-en="Advanced Configuration">Configuración Avanzada</h3>
         <ul>
-            <li><strong>Monedas Soportadas:</strong> EUR, USD, GBP, JPY, CAD, AUD, CHF, SEK, NOK, DKK, PLN, CZK, HUF, RUB</li>
-            <li><strong>Idiomas:</strong> Interfaz completamente traducida</li>
-            <li><strong>Personalización:</strong> Ajustes de visualización y preferencias</li>
+            <li><strong data-es="Monedas Soportadas:" data-en="Supported Currencies:">Monedas Soportadas:</strong> EUR, USD, GBP, JPY, CAD, AUD, CHF, SEK, NOK, DKK, PLN, CZK, HUF, RUB</li>
+            <li><strong data-es="Idiomas:" data-en="Languages:">Idiomas:</strong> <span data-es="Interfaz completamente traducida" data-en="Fully translated interface">Interfaz completamente traducida</span></li>
+            <li><strong data-es="Personalización:" data-en="Customization:">Personalización:</strong> <span data-es="Ajustes de visualización y preferencias" data-en="Display settings and preferences">Ajustes de visualización y preferencias</span></li>
         </ul>
 
         <div class="cta-section">
-            <h3>¡Optimiza tus Costes de Impresión 3D!</h3>
-            <p>Descarga 3DCalc y toma el control total de la rentabilidad de tus proyectos de impresión 3D.</p>
+            <h3 data-es="¡Optimiza tus Costes de Impresión 3D!" data-en="Optimize your 3D Printing Costs!">¡Optimiza tus Costes de Impresión 3D!</h3>
+            <p data-es="Descarga 3DCalc y toma el control total de la rentabilidad de tus proyectos de impresión 3D." data-en="Download 3DCalc and take full control of the profitability of your 3D printing projects.">Descarga 3DCalc y toma el control total de la rentabilidad de tus proyectos de impresión 3D.</p>
         </div>
 
-        <h2>Tecnología</h2>
-        <p>3DCalc está desarrollada con las últimas tecnologías:</p>
+        <h2 data-es="Tecnología" data-en="Technology">Tecnología</h2>
+        <p data-es="3DCalc está desarrollada con las últimas tecnologías:" data-en="3DCalc is developed with the latest technologies:">3DCalc está desarrollada con las últimas tecnologías:</p>
         <ul>
-            <li><strong>React Native:</strong> Para una experiencia nativa en iOS y Android</li>
-            <li><strong>Expo:</strong> Desarrollo y distribución optimizada</li>
-            <li><strong>AsyncStorage:</strong> Almacenamiento local seguro y eficiente</li>
-            <li><strong>Diseño Responsivo:</strong> Adaptable a cualquier tamaño de pantalla</li>
+            <li><strong>React Native:</strong> <span data-es="Para una experiencia nativa en iOS y Android" data-en="For a native experience on iOS and Android">Para una experiencia nativa en iOS y Android</span></li>
+            <li><strong>Expo:</strong> <span data-es="Desarrollo y distribución optimizada" data-en="Optimized development and distribution">Desarrollo y distribución optimizada</span></li>
+            <li><strong>AsyncStorage:</strong> <span data-es="Almacenamiento local seguro y eficiente" data-en="Secure and efficient local storage">Almacenamiento local seguro y eficiente</span></li>
+            <li><strong data-es="Diseño Responsivo:" data-en="Responsive Design:">Diseño Responsivo:</strong> <span data-es="Adaptable a cualquier tamaño de pantalla" data-en="Adaptable to any screen size">Adaptable a cualquier tamaño de pantalla</span></li>
         </ul>
 
-        <h2>Privacidad y Seguridad</h2>
+        <h2 data-es="Privacidad y Seguridad" data-en="Privacy and Security">Privacidad y Seguridad</h2>
         <div class="highlight">
-            <strong>Compromiso de Privacidad:</strong> 3DCalc respeta tu privacidad. Todos los datos se almacenan exclusivamente en tu dispositivo y nunca se transmiten a servidores externos.
+            <strong data-es="Compromiso de Privacidad:" data-en="Privacy Commitment:">Compromiso de Privacidad:</strong> <span data-es="3DCalc respeta tu privacidad. Todos los datos se almacenan exclusivamente en tu dispositivo y nunca se transmiten a servidores externos." data-en="3DCalc respects your privacy. All data is stored exclusively on your device and is never transmitted to external servers.">3DCalc respeta tu privacidad. Todos los datos se almacenan exclusivamente en tu dispositivo y nunca se transmiten a servidores externos.</span>
         </div>
 
-        <h2>Soporte</h2>
+        <h2 data-es="Soporte" data-en="Support">Soporte</h2>
         <div class="contact-info">
-            <p>¿Necesitas ayuda o tienes sugerencias?</p>
-            <p><strong>Desarrollador:</strong> SozoLabs</p>
-            <p><strong>Soporte:</strong> Disponible a través de App Store y Google Play Store</p>
-            <p><strong>Actualizaciones:</strong> Mejoras continuas basadas en feedback de usuarios</p>
+            <p data-es="¿Necesitas ayuda o tienes sugerencias?" data-en="Need help or have suggestions?">¿Necesitas ayuda o tienes sugerencias?</p>
+            <p><strong data-es="Desarrollador:" data-en="Developer:">Desarrollador:</strong> SozoLabs</p>
+            <p><strong data-es="Soporte:" data-en="Support:">Soporte:</strong> <span data-es="Disponible a través de App Store y Google Play Store" data-en="Available through App Store and Google Play Store">Disponible a través de App Store y Google Play Store</span></p>
+            <p><strong data-es="Actualizaciones:" data-en="Updates:">Actualizaciones:</strong> <span data-es="Mejoras continuas basadas en feedback de usuarios" data-en="Continuous improvements based on user feedback">Mejoras continuas basadas en feedback de usuarios</span></p>
         </div>
 
         <div class="footer-links">
-            <a href="privacy-policy.html">Política de Privacidad</a>
+            <a href="privacy-policy.html" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</a>
         </div>
     </div>
+
+    <script>
+        // Función para cambiar el idioma
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            const selectedLang = select.value;
+            
+            // Guardar la preferencia en localStorage
+            localStorage.setItem('selectedLanguage', selectedLang);
+            
+            // Obtener todos los elementos con atributos data-es y data-en
+            const elements = document.querySelectorAll('[data-es][data-en]');
+            
+            elements.forEach(element => {
+                const spanishText = element.getAttribute('data-es');
+                const englishText = element.getAttribute('data-en');
+                
+                if (selectedLang === 'es') {
+                    element.textContent = spanishText;
+                } else if (selectedLang === 'en') {
+                    element.textContent = englishText;
+                }
+            });
+            
+            // Actualizar el título de la página
+            if (selectedLang === 'es') {
+                document.title = '3DCalc - Calculadora de Costes de Impresión 3D';
+            } else if (selectedLang === 'en') {
+                document.title = '3DCalc - 3D Printing Cost Calculator';
+            }
+        }
+        
+        // Función para cargar el idioma guardado al cargar la página
+        function loadSavedLanguage() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'es';
+            const select = document.getElementById('languageSelect');
+            select.value = savedLang;
+            changeLanguage();
+        }
+        
+        // Cargar el idioma guardado cuando la página se carga
+        document.addEventListener('DOMContentLoaded', loadSavedLanguage);
+    </script>
 </body>
 </html>

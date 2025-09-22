@@ -70,11 +70,54 @@
             padding-top: 20px;
             border-top: 1px solid #ddd;
         }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            border: 2px solid #ff6600;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .language-selector select {
+            border: none;
+            background-color: transparent;
+            color: #ff6600;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+        .language-selector select:focus {
+            outline: none;
+        }
+        .footer-links {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .footer-links a {
+            color: #ff6600;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="es">🇪🇸 Español</option>
+            <option value="en">🇺🇸 English</option>
+        </select>
+    </div>
+    
     <div class="container">
-        <h1>Política de Privacidad</h1>
+        <h1 data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</h1>
         
         <div class="app-info">
             <h3>Información de la Aplicación</h3>
@@ -199,6 +242,53 @@
             <p><strong>Última actualización:</strong> Enero 2025</p>
             <p><strong>Versión de la política:</strong> 1.0</p>
         </div>
+        
+        <div class="footer-links">
+            <a href="index.html" data-es="Volver al Inicio" data-en="Back to Home">Volver al Inicio</a>
+        </div>
     </div>
+
+    <script>
+        // Función para cambiar el idioma
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            const selectedLang = select.value;
+            
+            // Guardar la preferencia en localStorage
+            localStorage.setItem('selectedLanguage', selectedLang);
+            
+            // Obtener todos los elementos con atributos data-es y data-en
+            const elements = document.querySelectorAll('[data-es][data-en]');
+            
+            elements.forEach(element => {
+                const spanishText = element.getAttribute('data-es');
+                const englishText = element.getAttribute('data-en');
+                
+                if (selectedLang === 'es') {
+                    element.textContent = spanishText;
+                } else if (selectedLang === 'en') {
+                    element.textContent = englishText;
+                }
+            });
+            
+            // Actualizar el título de la página
+            if (selectedLang === 'es') {
+                document.title = 'Política de Privacidad - 3DCalc';
+            } else if (selectedLang === 'en') {
+                document.title = 'Privacy Policy - 3DCalc';
+            }
+        }
+        
+        // Función para cargar el idioma guardado al cargar la página
+        function loadSavedLanguage() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'es';
+            const select = document.getElementById('languageSelect');
+            select.value = savedLang;
+            changeLanguage();
+        }
+        
+        // Cargar el idioma guardado cuando la página se carga
+        document.addEventListener('DOMContentLoaded', loadSavedLanguage);
+    </script>
 </body>
 </html>
