@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sozo Lab</title>
+    <title>SozoLabs · Aplicaciones</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -21,13 +21,13 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         h1 {
-            color: #ff6600;
+            color: #a63f00;
             text-align: center;
             margin-bottom: 30px;
             font-size: 2.5em;
         }
         h2 {
-            color: #ff6600;
+            color: #a63f00;
             border-bottom: 2px solid #ff6600;
             padding-bottom: 10px;
             margin-top: 30px;
@@ -41,7 +41,7 @@
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
-            border-left: 4px solid #ff6600;
+            border: 1px solid #e5e7eb;
         }
         .highlight {
             background-color: #fff3cd;
@@ -65,21 +65,121 @@
             color: #666;
             margin-bottom: 30px;
         }
-        .features-grid {
+        .catalog-section {
+            margin: 0 0 48px;
+        }
+        .catalog-section > h2 {
+            margin-top: 0;
+        }
+        .app-list,
+        .planned-list {
+            list-style: none;
+            margin: 12px 0 0;
+            padding: 0;
+        }
+        .app-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 88px minmax(0, 1fr);
+            align-items: center;
+            gap: 22px;
+            padding: 22px 4px;
+            border-bottom: 1px solid #eadfd8;
+        }
+        .app-icon {
+            display: block;
+            width: 88px;
+            height: 88px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 5px 14px rgba(40, 25, 15, 0.12);
+        }
+        .app-heading {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px 14px;
+        }
+        .app-heading h3,
+        .planned-row h3 {
+            margin: 0;
+            font-size: 1.18rem;
+        }
+        .app-description,
+        .planned-row p {
+            max-width: 68ch;
+            margin: 7px 0 0;
+            color: #555;
+        }
+        .app-status {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .app-status--available {
+            color: #245a36;
+            background: #e8f3e9;
+        }
+        .app-status--planned {
+            color: #713a00;
+            background: #fff0d8;
+        }
+        .store-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            margin-top: 12px;
+        }
+        .store-links a {
+            color: #a63f00;
+            font-weight: 700;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+        .store-links a:hover {
+            color: #753000;
+        }
+        .cta-section .store-links {
+            justify-content: center;
+        }
+        .cta-section .store-links a,
+        .cta-section .store-links a:hover {
+            color: #fff;
+        }
+        .planned-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             gap: 20px;
+            padding: 17px 4px;
+            border-bottom: 1px solid #eadfd8;
+        }
+        .planned-row p {
+            margin-top: 4px;
+        }
+        a:focus-visible,
+        select:focus-visible {
+            outline: 3px solid #7a3200;
+            outline-offset: 3px;
+        }
+        ::selection {
+            color: #332319;
+            background: #ffd9be;
+        }
+        .features-grid {
+            display: block;
             margin: 30px 0;
         }
         .feature-card {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #ff6600;
+            padding: 16px 4px;
+            border-bottom: 1px solid #e5e7eb;
         }
-        .feature-card h4 {
-            color: #ff6600;
-            margin-bottom: 10px;
+        .feature-card h3 {
+            color: #a63f00;
+            margin: 0 0 6px;
         }
         ul {
             padding-left: 20px;
@@ -89,7 +189,7 @@
         }
         .cta-section {
             text-align: center;
-            background-color: #ff6600;
+            background-color: #a63f00;
             color: white;
             padding: 30px;
             border-radius: 8px;
@@ -106,7 +206,7 @@
             border-top: 1px solid #ddd;
         }
         .footer-links a {
-            color: #ff6600;
+            color: #a63f00;
             text-decoration: none;
             margin: 0 15px;
         }
@@ -127,13 +227,48 @@
         .language-selector select {
             border: none;
             background-color: transparent;
-            color: #ff6600;
+            color: #a63f00;
             font-weight: bold;
             cursor: pointer;
             outline: none;
         }
         .language-selector select:focus {
             outline: none;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+            .container {
+                padding: 26px 18px;
+            }
+            .language-selector {
+                top: 12px;
+                right: 12px;
+                padding: 7px 9px;
+            }
+            .hero-section {
+                padding: 46px 4px 8px;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .app-row {
+                grid-template-columns: 64px minmax(0, 1fr);
+                gap: 14px;
+                padding: 18px 0;
+            }
+            .app-icon {
+                width: 64px;
+                height: 64px;
+                border-radius: 13px;
+            }
+            .planned-row {
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -146,43 +281,125 @@
     </div>
     
     <div class="container">
-        <div class="hero-section">
-            <h1>3DCalc</h1>
-            <p data-es="La calculadora definitiva para costes de impresión 3D" data-en="The ultimate 3D printing cost calculator">La calculadora definitiva para costes de impresión 3D</p>
-        </div>
-        
+        <header class="hero-section">
+            <h1>SozoLabs</h1>
+            <p data-es="Aplicaciones para necesidades del día a día." data-en="Apps for everyday needs.">Aplicaciones para necesidades del día a día.</p>
+        </header>
+
+        <section class="catalog-section" aria-labelledby="available-apps-title">
+            <h2 id="available-apps-title" data-es="Apps disponibles" data-en="Available apps">Apps disponibles</h2>
+            <ul class="app-list">
+                <li class="app-row">
+                    <img class="app-icon" src="assets/app-icons/3dcalc-plus.jpg" alt="3Dcalc+" width="88" height="88" loading="lazy">
+                    <div>
+                        <div class="app-heading">
+                            <h3>3Dcalc+</h3>
+                            <span class="app-status app-status--available" data-es="Disponible" data-en="Available">Disponible</span>
+                        </div>
+                        <p class="app-description" data-es="Calcula el coste real de tus impresiones 3D y prepara presupuestos." data-en="Calculate the real cost of your 3D prints and prepare quotes.">Calcula el coste real de tus impresiones 3D y prepara presupuestos.</p>
+                        <div class="store-links">
+                            <a href="https://apps.apple.com/es/app/3dcalc/id6752701677">App Store</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.sozolabs.calc3D">Google Play</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="app-row">
+                    <img class="app-icon" src="assets/app-icons/zampa.jpg" alt="Zampa" width="88" height="88" loading="lazy">
+                    <div>
+                        <div class="app-heading">
+                            <h3>Zampa</h3>
+                            <span class="app-status app-status--available" data-es="Disponible" data-en="Available">Disponible</span>
+                        </div>
+                        <p class="app-description" data-es="Encuentra menús del día y ofertas de restaurantes cercanos." data-en="Find daily menus and offers from nearby restaurants.">Encuentra menús del día y ofertas de restaurantes cercanos.</p>
+                        <div class="store-links">
+                            <a href="https://apps.apple.com/es/app/zampa/id6762012593">App Store</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.sozolab.zampa">Google Play</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="app-row">
+                    <img class="app-icon" src="assets/app-icons/poop-a-day.png" alt="Poop-A-Day" width="88" height="88" loading="lazy">
+                    <div>
+                        <div class="app-heading">
+                            <h3>Poop-A-Day</h3>
+                            <span class="app-status app-status--available" data-es="Disponible" data-en="Available">Disponible</span>
+                        </div>
+                        <p class="app-description" data-es="Un registro sencillo y divertido de tus visitas al baño." data-en="A simple, fun log of your bathroom visits.">Un registro sencillo y divertido de tus visitas al baño.</p>
+                        <div class="store-links">
+                            <a href="https://apps.apple.com/es/app/poop-a-day/id6761189542">App Store</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="catalog-section" aria-labelledby="planned-apps-title">
+            <h2 id="planned-apps-title" data-es="En preparación" data-en="In development">En preparación</h2>
+            <ul class="planned-list">
+                <li class="planned-row">
+                    <div>
+                        <h3>Tauko</h3>
+                        <p data-es="Diario de cefaleas y síntomas." data-en="A headache and symptom diary.">Diario de cefaleas y síntomas.</p>
+                        <div class="store-links">
+                            <a href="tauko-support.html" data-es="Soporte" data-en="Support">Soporte</a>
+                            <a href="tauko-privacy-policy.html" data-es="Política de privacidad" data-en="Privacy policy">Política de privacidad</a>
+                        </div>
+                    </div>
+                    <span class="app-status app-status--planned" data-es="En preparación" data-en="In development">En preparación</span>
+                </li>
+                <li class="planned-row">
+                    <div>
+                        <h3>3Dlapse</h3>
+                        <p data-es="Crea vídeos timelapse a partir de fotografías." data-en="Create timelapse videos from photos.">Crea vídeos timelapse a partir de fotografías.</p>
+                    </div>
+                    <span class="app-status app-status--planned" data-es="En preparación" data-en="In development">En preparación</span>
+                </li>
+                <li class="planned-row">
+                    <div>
+                        <h3>TaxiBOT</h3>
+                        <p data-es="Pide un taxi desde el móvil." data-en="Request a taxi from your phone.">Pide un taxi desde el móvil.</p>
+                    </div>
+                    <span class="app-status app-status--planned" data-es="En preparación" data-en="In development">En preparación</span>
+                </li>
+                <li class="planned-row">
+                    <div>
+                        <h3>TaxiBOT Driver</h3>
+                        <p data-es="Una app para taxistas que reciben y gestionan viajes." data-en="An app for taxi drivers to receive and manage rides.">Una app para taxistas que reciben y gestionan viajes.</p>
+                    </div>
+                    <span class="app-status app-status--planned" data-es="En preparación" data-en="In development">En preparación</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="catalog-section" aria-labelledby="details-3dcalc-title">
+        <h2 id="details-3dcalc-title" data-es="3Dcalc+ en detalle" data-en="3Dcalc+ in detail">3Dcalc+ en detalle</h2>
+
         <div class="app-info">
             <h3 data-es="Información de la Aplicación" data-en="Application Information">Información de la Aplicación</h3>
-            <p><strong data-es="Nombre:" data-en="Name:">Nombre:</strong> 3DCalc - <span data-es="Calculadora de Costes de Impresión 3D" data-en="3D Printing Cost Calculator">Calculadora de Costes de Impresión 3D</span></p>
-            <p><strong data-es="Desarrollador:" data-en="Developer:">Desarrollador:</strong> SozoLabs</p>
-            <p><strong data-es="Versión:" data-en="Version:">Versión:</strong> 1.0.0</p>
-            <p><strong>Bundle ID:</strong> com.sozolabs.calc3D</p>
+            <p><strong data-es="Nombre:" data-en="Name:">Nombre:</strong> 3Dcalc+</p>
+            <p><strong data-es="Plataformas:" data-en="Platforms:">Plataformas:</strong> iOS, Android</p>
         </div>
 
-        <h2 data-es="¿Qué es 3DCalc?" data-en="What is 3DCalc?">¿Qué es 3DCalc?</h2>
-        <p data-es="3DCalc es una aplicación móvil diseñada específicamente para makers, profesionales y entusiastas de la impresión 3D que necesitan calcular con precisión los costes de sus proyectos de impresión." data-en="3DCalc is a mobile application designed specifically for makers, professionals and 3D printing enthusiasts who need to accurately calculate the costs of their printing projects.">3DCalc es una aplicación móvil diseñada específicamente para makers, profesionales y entusiastas de la impresión 3D que necesitan calcular con precisión los costes de sus proyectos de impresión.</p>
-        
-        <div class="highlight">
-            <strong data-es="Privacidad Total:" data-en="Total Privacy:">Privacidad Total:</strong> <span data-es="Todos tus datos se almacenan localmente en tu dispositivo. No enviamos información a servidores externos." data-en="All your data is stored locally on your device. We don't send information to external servers.">Todos tus datos se almacenan localmente en tu dispositivo. No enviamos información a servidores externos.</span>
-        </div>
+        <h2 data-es="¿Qué es 3Dcalc+?" data-en="What is 3Dcalc+?">¿Qué es 3Dcalc+?</h2>
+        <p data-es="3Dcalc+ ayuda a makers, profesionales y aficionados a la impresión 3D a calcular con precisión el coste de sus proyectos." data-en="3Dcalc+ helps makers, professionals and 3D printing enthusiasts accurately calculate the cost of their projects.">3Dcalc+ ayuda a makers, profesionales y aficionados a la impresión 3D a calcular con precisión el coste de sus proyectos.</p>
 
         <h2 data-es="Características Principales" data-en="Main Features">Características Principales</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <h4 data-es="📊 Cálculos Precisos" data-en="📊 Precise Calculations">📊 Cálculos Precisos</h4>
+                <h3 data-es="Cálculos Precisos" data-en="Precise Calculations">Cálculos Precisos</h3>
                 <p data-es="Calcula costes basados en peso del filamento, tiempo de impresión, electricidad y costes adicionales." data-en="Calculate costs based on filament weight, printing time, electricity and additional costs.">Calcula costes basados en peso del filamento, tiempo de impresión, electricidad y costes adicionales.</p>
             </div>
             <div class="feature-card">
-                <h4 data-es="💰 Gestión de Márgenes" data-en="💰 Margin Management">💰 Gestión de Márgenes</h4>
+                <h3 data-es="Gestión de Márgenes" data-en="Margin Management">Gestión de Márgenes</h3>
                 <p data-es="Añade márgenes de beneficio personalizables para tus proyectos comerciales." data-en="Add customizable profit margins for your commercial projects.">Añade márgenes de beneficio personalizables para tus proyectos comerciales.</p>
             </div>
             <div class="feature-card">
-                <h4 data-es="📱 Multiplataforma" data-en="📱 Cross-platform">📱 Multiplataforma</h4>
-                <p data-es="Disponible para iOS, Android y Web con sincronización local." data-en="Available for iOS, Android and Web with local synchronization.">Disponible para iOS, Android y Web con sincronización local.</p>
+                <h3 data-es="Multiplataforma" data-en="Cross-platform">Multiplataforma</h3>
+                <p data-es="Disponible para iOS, Android y web, con sincronización de presupuestos al iniciar sesión." data-en="Available for iOS, Android and web, with budget sync when you sign in.">Disponible para iOS, Android y web, con sincronización de presupuestos al iniciar sesión.</p>
             </div>
             <div class="feature-card">
-                <h4 data-es="🌍 Multiidioma" data-en="🌍 Multilingual">🌍 Multiidioma</h4>
-                <p data-es="Soporte para español, inglés, francés, alemán, italiano, ruso y finlandés." data-en="Support for Spanish, English, French, German, Italian, Russian and Finnish.">Soporte para español, inglés, francés, alemán, italiano, ruso y finlandés.</p>
+                <h3 data-es="Multiidioma" data-en="Multilingual">Multiidioma</h3>
+                <p data-es="Disponible en español, inglés, alemán, catalán, checo, finés, francés, italiano, neerlandés, polaco, portugués y ruso." data-en="Available in Spanish, English, German, Catalan, Czech, Finnish, French, Italian, Dutch, Polish, Portuguese and Russian.">Disponible en español, inglés, alemán, catalán, checo, finés, francés, italiano, neerlandés, polaco, portugués y ruso.</p>
             </div>
         </div>
 
@@ -212,34 +429,32 @@
 
         <div class="cta-section">
             <h3 data-es="¡Optimiza tus Costes de Impresión 3D!" data-en="Optimize your 3D Printing Costs!">¡Optimiza tus Costes de Impresión 3D!</h3>
-            <p data-es="Descarga 3DCalc y toma el control total de la rentabilidad de tus proyectos de impresión 3D." data-en="Download 3DCalc and take full control of the profitability of your 3D printing projects.">Descarga 3DCalc y toma el control total de la rentabilidad de tus proyectos de impresión 3D.</p>
+            <p data-es="Descarga 3Dcalc+ y controla la rentabilidad de tus proyectos de impresión 3D." data-en="Download 3Dcalc+ and take control of the profitability of your 3D printing projects.">Descarga 3Dcalc+ y controla la rentabilidad de tus proyectos de impresión 3D.</p>
+            <div class="store-links">
+                <a href="https://apps.apple.com/es/app/3dcalc/id6752701677">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.sozolabs.calc3D">Google Play</a>
+            </div>
         </div>
 
-        <h2 data-es="Tecnología" data-en="Technology">Tecnología</h2>
-        <p data-es="3DCalc está desarrollada con las últimas tecnologías:" data-en="3DCalc is developed with the latest technologies:">3DCalc está desarrollada con las últimas tecnologías:</p>
+        <h2 data-es="Plataformas y sincronización" data-en="Platforms and sync">Plataformas y sincronización</h2>
+        <p data-es="3Dcalc+ cuenta con versiones para iOS, Android y web. Al iniciar sesión, puedes sincronizar presupuestos y ajustes entre dispositivos." data-en="3Dcalc+ is available for iOS, Android and web. When you sign in, you can sync budgets and settings across devices.">3Dcalc+ cuenta con versiones para iOS, Android y web. Al iniciar sesión, puedes sincronizar presupuestos y ajustes entre dispositivos.</p>
         <ul>
-            <li><strong>React Native:</strong> <span data-es="Para una experiencia nativa en iOS y Android" data-en="For a native experience on iOS and Android">Para una experiencia nativa en iOS y Android</span></li>
-            <li><strong>Expo:</strong> <span data-es="Desarrollo y distribución optimizada" data-en="Optimized development and distribution">Desarrollo y distribución optimizada</span></li>
-            <li><strong>AsyncStorage:</strong> <span data-es="Almacenamiento local seguro y eficiente" data-en="Secure and efficient local storage">Almacenamiento local seguro y eficiente</span></li>
-            <li><strong data-es="Diseño Responsivo:" data-en="Responsive Design:">Diseño Responsivo:</strong> <span data-es="Adaptable a cualquier tamaño de pantalla" data-en="Adaptable to any screen size">Adaptable a cualquier tamaño de pantalla</span></li>
+            <li><strong data-es="Presupuestos:" data-en="Budgets:">Presupuestos:</strong> <span data-es="Guarda cálculos para consultarlos y actualizarlos después." data-en="Save calculations to review and update later.">Guarda cálculos para consultarlos y actualizarlos después.</span></li>
+            <li><strong data-es="Sincronización:" data-en="Sync:">Sincronización:</strong> <span data-es="Accede a tus datos en los dispositivos donde hayas iniciado sesión." data-en="Access your data on devices where you are signed in.">Accede a tus datos en los dispositivos donde hayas iniciado sesión.</span></li>
+            <li><strong data-es="Uso sin cuenta:" data-en="Without an account:">Uso sin cuenta:</strong> <span data-es="Puedes usar la calculadora en modo local." data-en="You can use the calculator in local mode.">Puedes usar la calculadora en modo local.</span></li>
         </ul>
-
-        <h2 data-es="Privacidad y Seguridad" data-en="Privacy and Security">Privacidad y Seguridad</h2>
-        <div class="highlight">
-            <strong data-es="Compromiso de Privacidad:" data-en="Privacy Commitment:">Compromiso de Privacidad:</strong> <span data-es="3DCalc respeta tu privacidad. Todos los datos se almacenan exclusivamente en tu dispositivo y nunca se transmiten a servidores externos." data-en="3DCalc respects your privacy. All data is stored exclusively on your device and is never transmitted to external servers.">3DCalc respeta tu privacidad. Todos los datos se almacenan exclusivamente en tu dispositivo y nunca se transmiten a servidores externos.</span>
-        </div>
 
         <h2 data-es="Soporte" data-en="Support">Soporte</h2>
         <div class="contact-info">
             <p data-es="¿Necesitas ayuda o tienes sugerencias?" data-en="Need help or have suggestions?">¿Necesitas ayuda o tienes sugerencias?</p>
-            <p><strong data-es="Desarrollador:" data-en="Developer:">Desarrollador:</strong> SozoLabs</p>
             <p><strong data-es="Soporte:" data-en="Support:">Soporte:</strong> <span data-es="Disponible a través de App Store y Google Play Store" data-en="Available through App Store and Google Play Store">Disponible a través de App Store y Google Play Store</span></p>
             <p><strong data-es="Actualizaciones:" data-en="Updates:">Actualizaciones:</strong> <span data-es="Mejoras continuas basadas en feedback de usuarios" data-en="Continuous improvements based on user feedback">Mejoras continuas basadas en feedback de usuarios</span></p>
         </div>
 
         <div class="footer-links">
-            <a href="privacy-policy.html" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</a>
+            <a href="apps-privacy.html" data-es="Políticas de privacidad de las apps" data-en="App privacy policies">Políticas de privacidad de las apps</a>
         </div>
+        </section>
     </div>
 
     <script>
@@ -265,12 +480,8 @@
                 }
             });
             
-            // Actualizar el título de la página
-            if (selectedLang === 'es') {
-                document.title = '3DCalc - Calculadora de Costes de Impresión 3D';
-            } else if (selectedLang === 'en') {
-                document.title = '3DCalc - 3D Printing Cost Calculator';
-            }
+            document.documentElement.lang = selectedLang;
+            document.title = selectedLang === 'es' ? 'SozoLabs · Aplicaciones' : 'SozoLabs · Apps';
         }
         
         // Función para cargar el idioma guardado al cargar la página

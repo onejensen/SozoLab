@@ -3,292 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - 3DCalc</title>
+    <meta name="description" content="Política de privacidad de 3Dcalc+.">
+    <title>Política de privacidad · 3Dcalc+</title>
     <style>
+        :root {
+            --ink: #29231f;
+            --muted: #625b56;
+            --accent: #a63f00;
+            --line: #eadfd8;
+            --page: #f8f9fa;
+        }
+        * { box-sizing: border-box; }
         body {
+            margin: 0;
+            padding: 32px 18px;
+            background: var(--page);
+            color: var(--ink);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            line-height: 1.65;
+        }
+        main {
+            max-width: 820px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
+            padding: 42px;
+            background: #fff;
+            border: 1px solid #eee8e4;
+            border-radius: 16px;
+            box-shadow: 0 8px 28px rgba(40, 25, 15, 0.08);
         }
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #ff6600;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #ff6600;
-            border-bottom: 2px solid #ff6600;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
-        h3 {
-            color: #333;
-            margin-top: 25px;
-        }
-        .app-info {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #ff6600;
-        }
-        .highlight {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #ffeaa7;
-            margin: 15px 0;
-        }
-        .contact-info {
-            background-color: #e8f4fd;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        .last-updated {
-            text-align: center;
-            color: #666;
-            font-style: italic;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-        .language-selector {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: white;
-            border: 2px solid #ff6600;
-            border-radius: 8px;
-            padding: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        .language-selector select {
-            border: none;
-            background-color: transparent;
-            color: #ff6600;
-            font-weight: bold;
-            cursor: pointer;
-            outline: none;
-        }
-        .language-selector select:focus {
-            outline: none;
-        }
-        .footer-links {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-        .footer-links a {
-            color: #ff6600;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
+        .language-selector { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 24px; }
+        .language-selector select { padding: 8px 10px; border: 1px solid #d8c9bf; border-radius: 8px; background: #fff; color: var(--ink); font: inherit; }
+        h1 { margin: 0 0 8px; color: var(--accent); font-size: clamp(2rem, 5vw, 2.6rem); line-height: 1.15; }
+        h2 { margin: 32px 0 10px; padding-bottom: 7px; border-bottom: 2px solid var(--line); color: var(--accent); font-size: 1.3rem; }
+        p { margin: 0 0 14px; }
+        ul { padding-left: 22px; }
+        li { margin: 0 0 7px; }
+        .updated, .muted { color: var(--muted); }
+        a { color: var(--accent); font-weight: 650; text-underline-offset: 3px; }
+        a:focus-visible, select:focus-visible { outline: 3px solid #1b70d1; outline-offset: 3px; }
+        .scope-note { margin: 24px 0; padding: 16px 18px; border-left: 4px solid var(--accent); border-radius: 8px; background: #fff5ef; }
+        @media (max-width: 560px) { body { padding: 14px 10px; } main { padding: 22px 18px; border-radius: 12px; } .language-selector { margin-bottom: 18px; } }
     </style>
 </head>
 <body>
-    <div class="language-selector">
-        <select id="languageSelect" onchange="changeLanguage()">
-            <option value="es">🇪🇸 Español</option>
-            <option value="en">🇺🇸 English</option>
-        </select>
-    </div>
-    
-    <div class="container">
-        <h1 data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</h1>
-        
-        <div class="app-info">
-            <h3>Información de la Aplicación</h3>
-            <p><strong>Nombre:</strong> 3DCalc - Calculadora de Costes de Impresión 3D</p>
-            <p><strong>Desarrollador:</strong> SozoLabs</p>
-            <p><strong>Versión:</strong> 1.0.0</p>
-            <p><strong>Bundle ID:</strong> com.sozolabs.calc3D</p>
+    <main>
+        <div class="language-selector">
+            <label for="languageSelect" data-es="Idioma" data-en="Language">Idioma</label>
+            <select id="languageSelect" aria-label="Idioma" onchange="changeLanguage()">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
         </div>
 
-        <h2>1. Introducción</h2>
-        <p>Esta Política de Privacidad describe cómo 3DCalc ("nosotros", "nuestra aplicación") maneja la información cuando utilizas nuestra aplicación móvil de calculadora de costes de impresión 3D.</p>
-        
-        <div class="highlight">
-            <strong>Compromiso de Privacidad:</strong> 3DCalc está diseñada con la privacidad como prioridad. Todos los datos se almacenan localmente en tu dispositivo y no se transmiten a servidores externos.
+        <h1 data-es="Política de privacidad de 3Dcalc+" data-en="3Dcalc+ Privacy Policy">Política de privacidad de 3Dcalc+</h1>
+        <p class="updated" data-es="Última actualización: 15 de octubre de 2026" data-en="Last updated: October 15, 2026">Última actualización: 15 de octubre de 2026</p>
+        <div class="scope-note">
+            <p data-es="Esta política se aplica a 3Dcalc+ en iOS, Android y web. Las demás apps de SozoLabs tienen políticas propias, enlazadas en el índice de privacidad." data-en="This policy applies to 3Dcalc+ on iOS, Android, and web. Other SozoLabs apps have their own policies, linked from the privacy index.">Esta política se aplica a 3Dcalc+ en iOS, Android y web. Las demás apps de SozoLabs tienen políticas propias, enlazadas en el índice de privacidad.</p>
         </div>
 
-        <h2>2. Información que Recopilamos</h2>
-        <h3>2.1 Datos de Cálculo</h3>
-        <p>La aplicación almacena localmente en tu dispositivo:</p>
+        <h2 data-es="1. Responsable y contacto" data-en="1. Controller and contact">1. Responsable y contacto</h2>
+        <p data-es="El responsable indicado para 3Dcalc+ es Sozolabs. Para consultas o solicitudes sobre privacidad, escribe a info@sozo3d.es." data-en="The controller identified for 3Dcalc+ is Sozolabs. For privacy questions or requests, email info@sozo3d.es.">El responsable indicado para 3Dcalc+ es Sozolabs. Para consultas o solicitudes sobre privacidad, escribe a info@sozo3d.es.</p>
+
+        <h2 data-es="2. Datos que puede guardar la app" data-en="2. Data the app may store">2. Datos que puede guardar la app</h2>
+        <p data-es="Puedes usar las funciones de cálculo en el dispositivo sin iniciar sesión. Si creas una cuenta o inicias sesión y activas la sincronización, 3Dcalc+ procesa:" data-en="You can use the calculator on your device without signing in. If you create or sign in to an account and use sync, 3Dcalc+ processes:">Puedes usar las funciones de cálculo en el dispositivo sin iniciar sesión. Si creas una cuenta o inicias sesión y activas la sincronización, 3Dcalc+ procesa:</p>
         <ul>
-            <li><strong>Proyectos de cálculo:</strong> Nombre del proyecto, peso del filamento, precio del material, tiempo de impresión, costes adicionales, margen de beneficio, y resultados de cálculos</li>
-            <li><strong>Historial de cálculos:</strong> Registro de proyectos anteriores con fecha de creación</li>
-            <li><strong>Preferencias de usuario:</strong> Idioma seleccionado (español, inglés, francés, alemán, italiano, ruso, finlandés) y moneda preferida</li>
+            <li data-es="Datos de cuenta: correo electrónico, identificador de usuario y proveedor de inicio de sesión (correo, Google o Apple, según la plataforma)." data-en="Account data: email address, user identifier, and sign-in provider (email, Google, or Apple, depending on the platform).">Datos de cuenta: correo electrónico, identificador de usuario y proveedor de inicio de sesión (correo, Google o Apple, según la plataforma).</li>
+            <li data-es="Ajustes, impresoras, materiales, inventario, cálculos y presupuestos que guardes para sincronizarlos entre dispositivos." data-en="Settings, printers, materials, inventory, calculations, and budgets you save to sync across devices.">Ajustes, impresoras, materiales, inventario, cálculos y presupuestos que guardes para sincronizarlos entre dispositivos.</li>
+            <li data-es="Datos opcionales que añadas a presupuestos, como nombre, empresa, correo, teléfono, dirección y datos fiscales tuyos o de tus clientes." data-en="Optional details you add to quotes, such as names, company, email, phone, address, and tax details for you or your clients.">Datos opcionales que añadas a presupuestos, como nombre, empresa, correo, teléfono, dirección y datos fiscales tuyos o de tus clientes.</li>
+            <li data-es="Imágenes que decidas subir, como el logotipo de tu negocio o la imagen de un modelo asociada a un presupuesto." data-en="Images you choose to upload, such as your business logo or a model image attached to a budget.">Imágenes que decidas subir, como el logotipo de tu negocio o la imagen de un modelo asociada a un presupuesto.</li>
         </ul>
 
-        <h3>2.2 Configuraciones de la Aplicación</h3>
-        <p>Almacenamos localmente:</p>
-        <ul>
-            <li>Configuración de idioma de la interfaz</li>
-            <li>Moneda seleccionada para los cálculos (EUR, USD, GBP, JPY, CAD, AUD, CHF, SEK, NOK, DKK, PLN, CZK, HUF, RUB)</li>
-            <li>Preferencias de visualización</li>
-        </ul>
+        <h2 data-es="3. Para qué se usan y dónde se almacenan" data-en="3. How data is used and stored">3. Para qué se usan y dónde se almacenan</h2>
+        <p data-es="Usamos estos datos para iniciar sesión, guardar y sincronizar tus ajustes y presupuestos, generar los documentos que solicites y proteger el servicio. Cuando usas la sincronización, los datos asociados a tu cuenta se transmiten a los servicios de Google Firebase: Firebase Authentication, Cloud Firestore y Cloud Storage. Firebase App Check y los proveedores de inicio de sesión pueden procesar señales técnicas necesarias para autenticación y seguridad." data-en="We use this data to sign you in, save and sync your settings and budgets, generate documents you request, and protect the service. When you use sync, account data is sent to Google Firebase services: Firebase Authentication, Cloud Firestore, and Cloud Storage. Firebase App Check and sign-in providers may process technical signals needed for authentication and security.">Usamos estos datos para iniciar sesión, guardar y sincronizar tus ajustes y presupuestos, generar los documentos que solicites y proteger el servicio. Cuando usas la sincronización, los datos asociados a tu cuenta se transmiten a los servicios de Google Firebase: Firebase Authentication, Cloud Firestore y Cloud Storage. Firebase App Check y los proveedores de inicio de sesión pueden procesar señales técnicas necesarias para autenticación y seguridad.</p>
+        <p data-es="No vendemos los datos de tu cuenta ni usamos el contenido de tus presupuestos para publicidad. Los servicios de Google, Apple y las tiendas de aplicaciones pueden tratar datos conforme a sus propias políticas." data-en="We do not sell account data or use the contents of your budgets for advertising. Google, Apple, and app store services may process data under their own policies.">No vendemos los datos de tu cuenta ni usamos el contenido de tus presupuestos para publicidad. Los servicios de Google, Apple y las tiendas de aplicaciones pueden tratar datos conforme a sus propias políticas.</p>
 
-        <h2>3. Cómo Utilizamos la Información</h2>
-        <p>Los datos almacenados se utilizan exclusivamente para:</p>
-        <ul>
-            <li>Realizar cálculos de costes de impresión 3D</li>
-            <li>Mantener un historial de tus proyectos para referencia futura</li>
-            <li>Personalizar la experiencia de usuario (idioma y moneda)</li>
-            <li>Mejorar la funcionalidad de la aplicación</li>
-        </ul>
+        <h2 data-es="4. Conservación y eliminación" data-en="4. Retention and deletion">4. Conservación y eliminación</h2>
+        <p data-es="Los datos guardados solo en el dispositivo permanecen allí hasta que los borres o desinstales la app. Los datos sincronizados se conservan mientras mantengas la cuenta o hasta que los elimines. Puedes exportar tus datos y solicitar la eliminación de la cuenta desde los ajustes de 3Dcalc+. El proceso elimina la cuenta, los ajustes y los presupuestos, e intenta borrar los archivos asociados. Si el proceso falla o detectas que quedó un archivo, contacta con nosotros en el correo indicado arriba. No indicamos un plazo fijo de borrado de copias de seguridad del proveedor." data-en="Data stored only on your device stays there until you delete it or uninstall the app. Synced data is kept while your account is active or until you delete it. You can export your data and request account deletion in 3Dcalc+ settings. The process deletes the account, settings, and budgets, and attempts to remove associated files. If the process fails or you find a file that remains, contact us at the email above. We do not state a fixed deletion period for provider backups.">Los datos guardados solo en el dispositivo permanecen allí hasta que los borres o desinstales la app. Los datos sincronizados se conservan mientras mantengas la cuenta o hasta que los elimines. Puedes exportar tus datos y solicitar la eliminación de la cuenta desde los ajustes de 3Dcalc+. El proceso elimina la cuenta, los ajustes y los presupuestos, e intenta borrar los archivos asociados. Si el proceso falla o detectas que quedó un archivo, contacta con nosotros en el correo indicado arriba. No indicamos un plazo fijo de borrado de copias de seguridad del proveedor.</p>
 
-        <h2>4. Almacenamiento de Datos</h2>
-        <div class="highlight">
-            <strong>Almacenamiento Local:</strong> Todos los datos se almacenan exclusivamente en tu dispositivo utilizando AsyncStorage (iOS/Android) o localStorage (Web). No se envían datos a servidores externos.
-        </div>
-        
-        <h3>4.1 Ubicación de los Datos</h3>
-        <ul>
-            <li><strong>iOS:</strong> Los datos se almacenan en el sandbox de la aplicación</li>
-            <li><strong>Android:</strong> Los datos se almacenan en el almacenamiento interno de la aplicación</li>
-            <li><strong>Web:</strong> Los datos se almacenan en el localStorage del navegador</li>
-        </ul>
+        <h2 data-es="5. Cambios en esta política" data-en="5. Changes to this policy">5. Cambios en esta política</h2>
+        <p data-es="Si cambia la forma en que 3Dcalc+ procesa datos, actualizaremos esta página y su fecha." data-en="If 3Dcalc+'s data practices change, we will update this page and its date.">Si cambia la forma en que 3Dcalc+ procesa datos, actualizaremos esta página y su fecha.</p>
 
-        <h3>4.2 Seguridad de los Datos</h3>
-        <p>Los datos están protegidos por:</p>
-        <ul>
-            <li>Sandboxing del sistema operativo</li>
-            <li>Cifrado automático del dispositivo (si está habilitado)</li>
-            <li>Acceso restringido solo a la aplicación 3DCalc</li>
-        </ul>
-
-        <h2>5. Compartir Información</h2>
-        <p><strong>No compartimos, vendemos, alquilamos o divulgamos tu información personal a terceros.</strong> Todos los datos permanecen en tu dispositivo.</p>
-
-        <h2>6. Retención de Datos</h2>
-        <p>Los datos se conservan hasta que:</p>
-        <ul>
-            <li>Elimines manualmente los proyectos desde la aplicación</li>
-            <li>Utilices la función "Eliminar Todo" en el historial</li>
-            <li>Desinstales la aplicación (esto eliminará todos los datos almacenados)</li>
-            <li>Restablezcas tu dispositivo</li>
-        </ul>
-
-        <h2>7. Tus Derechos</h2>
-        <p>Tienes control total sobre tus datos:</p>
-        <ul>
-            <li><strong>Acceso:</strong> Puedes ver todos tus datos en la sección "Historial" de la aplicación</li>
-            <li><strong>Modificación:</strong> Puedes editar las configuraciones de idioma y moneda</li>
-            <li><strong>Eliminación:</strong> Puedes eliminar proyectos individuales o todo el historial</li>
-            <li><strong>Portabilidad:</strong> Los datos están en tu dispositivo y puedes acceder a ellos en cualquier momento</li>
-        </ul>
-
-        <h2>8. Menores de Edad</h2>
-        <p>Nuestra aplicación no está dirigida específicamente a menores de 13 años. No recopilamos conscientemente información personal de menores de 13 años. Si eres padre o tutor y crees que tu hijo nos ha proporcionado información personal, contáctanos.</p>
-
-        <h2>9. Cambios en la Aplicación</h2>
-        <p>Las actualizaciones de la aplicación pueden incluir:</p>
-        <ul>
-            <li>Nuevas funcionalidades de cálculo</li>
-            <li>Mejoras en la interfaz de usuario</li>
-            <li>Corrección de errores</li>
-            <li>Optimizaciones de rendimiento</li>
-        </ul>
-        <p>Cualquier cambio que afecte el manejo de datos será comunicado a través de actualizaciones de esta política.</p>
-
-        <h2>10. Tecnologías Utilizadas</h2>
-        <p>La aplicación utiliza las siguientes tecnologías para el almacenamiento local:</p>
-        <ul>
-            <li><strong>AsyncStorage:</strong> Para almacenamiento persistente en dispositivos móviles</li>
-            <li><strong>React Native:</strong> Framework de desarrollo multiplataforma</li>
-            <li><strong>Expo:</strong> Plataforma de desarrollo y distribución</li>
-        </ul>
-
-        <h2>11. Contacto</h2>
-        <div class="contact-info">
-            <p>Si tienes preguntas sobre esta Política de Privacidad o sobre el manejo de tus datos, puedes contactarnos:</p>
-            <p><strong>Desarrollador:</strong> SozoLabs</p>
-            <p><strong>Aplicación:</strong> 3DCalc</p>
-            <p><strong>Soporte:</strong> A través de la App Store o Google Play Store</p>
-        </div>
-
-        <h2>12. Cambios a esta Política</h2>
-        <p>Podemos actualizar nuestra Política de Privacidad ocasionalmente. Te notificaremos sobre cualquier cambio publicando la nueva Política de Privacidad en esta página y actualizando la fecha de "última actualización".</p>
-        
-        <p>Te recomendamos revisar esta Política de Privacidad periódicamente para estar informado sobre cómo protegemos tu información.</p>
-
-        <h2>13. Consentimiento</h2>
-        <p>Al utilizar 3DCalc, consientes el procesamiento de tu información como se describe en esta Política de Privacidad.</p>
-
-        <div class="last-updated">
-            <p><strong>Última actualización:</strong> Enero 2025</p>
-            <p><strong>Versión de la política:</strong> 1.0</p>
-        </div>
-        
-        <div class="footer-links">
-            <a href="index.html" data-es="Volver al Inicio" data-en="Back to Home">Volver al Inicio</a>
-        </div>
-    </div>
+        <p><a href="apps-privacy.html" data-es="Ver políticas de privacidad de las demás apps SozoLabs" data-en="See privacy policies for other SozoLabs apps">Ver políticas de privacidad de las demás apps SozoLabs</a></p>
+        <p><a href="index.html" data-es="← Volver a SozoLabs" data-en="← Back to SozoLabs">← Volver a SozoLabs</a></p>
+    </main>
 
     <script>
-        // Función para cambiar el idioma
         function changeLanguage() {
             const select = document.getElementById('languageSelect');
             const selectedLang = select.value;
-            
-            // Guardar la preferencia en localStorage
             localStorage.setItem('selectedLanguage', selectedLang);
-            
-            // Obtener todos los elementos con atributos data-es y data-en
-            const elements = document.querySelectorAll('[data-es][data-en]');
-            
-            elements.forEach(element => {
-                const spanishText = element.getAttribute('data-es');
-                const englishText = element.getAttribute('data-en');
-                
-                if (selectedLang === 'es') {
-                    element.textContent = spanishText;
-                } else if (selectedLang === 'en') {
-                    element.textContent = englishText;
-                }
+            document.documentElement.lang = selectedLang;
+            document.querySelectorAll('[data-es][data-en]').forEach((element) => {
+                element.textContent = element.getAttribute(`data-${selectedLang}`);
             });
-            
-            // Actualizar el título de la página
-            if (selectedLang === 'es') {
-                document.title = 'Política de Privacidad - 3DCalc';
-            } else if (selectedLang === 'en') {
-                document.title = 'Privacy Policy - 3DCalc';
-            }
+            document.title = selectedLang === 'es' ? 'Política de privacidad · 3Dcalc+' : '3Dcalc+ Privacy Policy';
+            select.setAttribute('aria-label', selectedLang === 'es' ? 'Idioma' : 'Language');
         }
-        
-        // Función para cargar el idioma guardado al cargar la página
-        function loadSavedLanguage() {
+        document.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('selectedLanguage') || 'es';
-            const select = document.getElementById('languageSelect');
-            select.value = savedLang;
+            document.getElementById('languageSelect').value = savedLang;
             changeLanguage();
-        }
-        
-        // Cargar el idioma guardado cuando la página se carga
-        document.addEventListener('DOMContentLoaded', loadSavedLanguage);
+        });
     </script>
 </body>
 </html>
