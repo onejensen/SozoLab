@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tauko support · Sozo Labs</title>
+<meta name="description" content="Support for Tauko, the headache diary by Sozo Labs.">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f7f8fa; --surface: #ffffff; --ink: #14202e; --muted: #3c4a5a; --line: #d9dee5; --accent: #1d5f99;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #050e18; --surface: #0c1825; --ink: #e3e9ef; --muted: #afbdcc; --line: #1e3048; --accent: #8cc0ee; }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 1.0625rem/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+header { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--line); z-index: 1; }
+header .in, main, footer { max-width: 44rem; margin: 0 auto; padding: 0 16px; }
+header .in { display: flex; flex-wrap: wrap; gap: .25rem 1rem; align-items: center; justify-content: space-between; min-height: 3.25rem; }
+.brand { font-weight: 600; }
+nav a { display: inline-block; padding: .6rem .5rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+nav a:hover, nav a:focus-visible { text-decoration: underline; }
+main { padding-top: 1rem; }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 8px 20px 20px; margin: 24px 0; scroll-margin-top: 4rem; }
+h1 { font-size: 1.6rem; line-height: 1.25; margin: 1rem 0 .25rem; }
+h2 { font-size: 1.2rem; margin: 1.75rem 0 .5rem; }
+p, li { color: var(--muted); overflow-wrap: anywhere; hyphens: auto; }
+a { color: var(--accent); }
+strong { color: var(--ink); }
+ul { padding-left: 1.25rem; }
+li { margin: .3rem 0; }
+footer { margin: 0 auto 32px; color: var(--muted); font-size: .9rem; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 520px) {
+  header .in { align-items: flex-start; padding-top: .35rem; padding-bottom: .35rem; }
+  nav { display: flex; flex-wrap: wrap; }
+  section { padding: 8px 16px 18px; }
+}
+</style>
+</head>
+<body>
+<header id="top"><div class="in"><span class="brand">Tauko · Sozo Labs</span><nav aria-label="Language"><a href="#en" hreflang="en" lang="en">English</a><a href="#fi" hreflang="fi" lang="fi">Suomi</a><a href="#sv" hreflang="sv" lang="sv">Svenska</a></nav></div></header>
+<main>
+<section id="en" lang="en">
+<h1>Tauko support</h1>
+<p>For help with Tauko, email <a href="mailto:juanjensen@icloud.com?subject=Tauko%20support">juanjensen@icloud.com</a>.</p>
+<h2>What to include</h2>
+<ul>
+<li>Your phone model and iOS or Android version.</li>
+<li>The Tauko version, if you can find it in the app.</li>
+<li>What you tapped and what happened, including any error message.</li>
+</ul>
+<p>Please do not email your diary, headache details, medication details or PDF report. Tauko stores diary information on your phone; support does not need to see it.</p>
+<p>Tauko records and summarises what you enter. It does not diagnose or recommend treatment, and support cannot provide medical advice.</p>
+<p><a href="tauko-privacy-policy.html#en">Tauko privacy policy</a> · <a href="index.html">Sozo Labs apps</a></p>
+</section>
+<section id="fi" lang="fi">
+<h1>Taukon tuki</h1>
+<p>Saat apua Taukoon lähettämällä sähköpostia osoitteeseen <a href="mailto:juanjensen@icloud.com?subject=Tauko%20support">juanjensen@icloud.com</a>.</p>
+<h2>Mitä viestiin kannattaa lisätä</h2>
+<ul>
+<li>Puhelimen malli sekä iOS- tai Android-versio.</li>
+<li>Taukon versio, jos löydät sen sovelluksesta.</li>
+<li>Mitä napautit ja mitä tapahtui, myös mahdollinen virheilmoitus.</li>
+</ul>
+<p>Älä lähetä päiväkirjaasi, päänsärkytietoja, lääkitystietoja tai PDF-raporttia sähköpostitse. Tauko säilyttää päiväkirjan puhelimessasi, eikä tuki tarvitse nähdä sitä.</p>
+<p>Tauko kirjaa ja tiivistää syöttämäsi tiedot. Se ei tee diagnooseja eikä suosittele hoitoa, eikä tuki voi antaa lääketieteellisiä neuvoja.</p>
+<p><a href="tauko-privacy-policy.html#fi">Taukon tietosuojaseloste</a> · <a href="index.html">Sozo Labsin sovellukset</a></p>
+</section>
+<section id="sv" lang="sv">
+<h1>Support för Tauko</h1>
+<p>Om du behöver hjälp med Tauko kan du mejla <a href="mailto:juanjensen@icloud.com?subject=Tauko%20support">juanjensen@icloud.com</a>.</p>
+<h2>Ta gärna med detta</h2>
+<ul>
+<li>Telefonmodell samt iOS- eller Android-version.</li>
+<li>Taukos version, om du hittar den i appen.</li>
+<li>Vad du tryckte på och vad som hände, inklusive eventuella felmeddelanden.</li>
+</ul>
+<p>Skicka inte dagboken, uppgifter om huvudvärk eller läkemedel eller PDF-rapporten via mejl. Tauko sparar dagboken i din telefon och supporten behöver inte se den.</p>
+<p>Tauko registrerar och sammanfattar det du för in. Appen ställer inga diagnoser eller rekommenderar behandling, och supporten kan inte ge medicinska råd.</p>
+<p><a href="tauko-privacy-policy.html#sv">Taukos integritetspolicy</a> · <a href="index.html">Sozo Labs appar</a></p>
+</section>
+</main>
+<footer>Tauko · Sozo Labs</footer>
+</body>
+</html>
