@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Índice de las políticas de privacidad de las aplicaciones de SozoLabs.">
+    <title>Políticas de privacidad · SozoLabs</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #29231f;
+            --muted: #625b56;
+            --accent: #a63f00;
+            --line: #eadfd8;
+            --surface: #fff;
+            --page: #f8f9fa;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 32px 18px;
+            background: var(--page);
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 42px;
+            background: var(--surface);
+            border: 1px solid #eee8e4;
+            border-radius: 16px;
+            box-shadow: 0 8px 28px rgba(40, 25, 15, 0.08);
+        }
+        .language-selector {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            margin: 0 0 24px;
+        }
+        .language-selector select {
+            padding: 8px 10px;
+            border: 1px solid #d8c9bf;
+            border-radius: 8px;
+            background: #fff;
+            color: var(--ink);
+            font: inherit;
+        }
+        header { margin-bottom: 34px; }
+        h1 {
+            margin: 0 0 12px;
+            color: var(--accent);
+            font-size: clamp(2rem, 5vw, 2.6rem);
+            line-height: 1.15;
+        }
+        header p { max-width: 66ch; margin: 0; color: var(--muted); }
+        h2 {
+            margin: 34px 0 10px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--line);
+            color: var(--accent);
+            font-size: 1.35rem;
+        }
+        .policy-list, .planned-list { margin: 0; padding: 0; list-style: none; }
+        .policy-card {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .policy-heading {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+        }
+        h3 { margin: 0; font-size: 1.15rem; }
+        .status {
+            padding: 3px 9px;
+            border-radius: 999px;
+            background: #edf5ec;
+            color: #275a2d;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+        .policy-card p { margin: 8px 0 10px; color: var(--muted); }
+        a { color: var(--accent); font-weight: 650; text-underline-offset: 3px; }
+        a:hover { text-decoration-thickness: 2px; }
+        a:focus-visible, select:focus-visible {
+            outline: 3px solid #1b70d1;
+            outline-offset: 3px;
+        }
+        .planned-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .planned-list li {
+            padding: 6px 11px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+        .back-link { display: inline-block; margin-top: 34px; }
+        @media (max-width: 560px) {
+            body { padding: 14px 10px; }
+            .container { padding: 22px 18px; border-radius: 12px; }
+            .language-selector { margin-bottom: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="language-selector">
+            <label for="languageSelect" data-es="Idioma" data-en="Language">Idioma</label>
+            <select id="languageSelect" aria-label="Idioma" onchange="changeLanguage()">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <header>
+            <h1 data-es="Políticas de privacidad de SozoLabs" data-en="SozoLabs privacy policies">Políticas de privacidad de SozoLabs</h1>
+            <p data-es="Cada app tiene su propia política, porque sus funciones y los datos que utiliza son distintos. Este índice te lleva al documento de cada aplicación; no es una política común para todas." data-en="Each app has its own policy because its features and data practices differ. This index links to each app's document; it is not a shared policy for all apps.">Cada app tiene su propia política, porque sus funciones y los datos que utiliza son distintos. Este índice te lleva al documento de cada aplicación; no es una política común para todas.</p>
+        </header>
+
+        <section aria-labelledby="available-title">
+            <h2 id="available-title" data-es="Apps disponibles" data-en="Available apps">Apps disponibles</h2>
+            <ul class="policy-list">
+                <li class="policy-card">
+                    <div class="policy-heading">
+                        <h3>3Dcalc+</h3>
+                        <span class="status" data-es="Disponible" data-en="Available">Disponible</span>
+                    </div>
+                    <p data-es="Esta política se aplica a 3Dcalc+ y describe el uso de la cuenta y la sincronización en la nube." data-en="This policy applies to 3Dcalc+ and describes account use and cloud sync.">Esta política se aplica a 3Dcalc+ y describe el uso de la cuenta y la sincronización en la nube.</p>
+                    <a href="https://www.3dcalc.app/privacy.html" target="_blank" rel="noopener noreferrer" data-es="Abrir política de privacidad de 3Dcalc+ ↗" data-en="Open 3Dcalc+ privacy policy ↗">Abrir política de privacidad de 3Dcalc+ ↗</a>
+                </li>
+                <li class="policy-card">
+                    <div class="policy-heading">
+                        <h3>Zampa</h3>
+                        <span class="status" data-es="Disponible" data-en="Available">Disponible</span>
+                    </div>
+                    <p data-es="Consulta la política específica de Zampa." data-en="Read Zampa's app-specific privacy policy.">Consulta la política específica de Zampa.</p>
+                    <a href="https://www.getzampa.com/privacy" target="_blank" rel="noopener noreferrer" data-es="Abrir política de privacidad de Zampa ↗" data-en="Open Zampa privacy policy ↗">Abrir política de privacidad de Zampa ↗</a>
+                </li>
+                <li class="policy-card">
+                    <div class="policy-heading">
+                        <h3>Poop-A-Day</h3>
+                        <span class="status" data-es="Disponible" data-en="Available">Disponible</span>
+                    </div>
+                    <p data-es="Consulta la política específica de Poop-A-Day." data-en="Read Poop-A-Day's app-specific privacy policy.">Consulta la política específica de Poop-A-Day.</p>
+                    <a href="https://onejensen.github.io/Poop-A-Day/privacy-policy.html" target="_blank" rel="noopener noreferrer" data-es="Abrir política de privacidad de Poop-A-Day ↗" data-en="Open Poop-A-Day privacy policy ↗">Abrir política de privacidad de Poop-A-Day ↗</a>
+                </li>
+            </ul>
+        </section>
+
+        <section aria-labelledby="planned-title">
+            <h2 id="planned-title" data-es="Apps en preparación" data-en="Apps in development">Apps en preparación</h2>
+            <p data-es="Publicaremos una política específica para cada app antes de su lanzamiento." data-en="We will publish a separate policy for each app before release.">Publicaremos una política específica para cada app antes de su lanzamiento.</p>
+            <ul class="planned-list">
+                <li>Tauko</li>
+                <li>3Dlapse</li>
+                <li>TaxiBOT</li>
+                <li>TaxiBOT Driver</li>
+            </ul>
+        </section>
+
+        <a class="back-link" href="index.html" data-es="← Volver a SozoLabs" data-en="← Back to SozoLabs">← Volver a SozoLabs</a>
+    </main>
+
+    <script>
+        function changeLanguage() {
+            const select = document.getElementById('languageSelect');
+            const selectedLang = select.value;
+            localStorage.setItem('selectedLanguage', selectedLang);
+            document.documentElement.lang = selectedLang;
+
+            document.querySelectorAll('[data-es][data-en]').forEach((element) => {
+                element.textContent = element.getAttribute(`data-${selectedLang}`);
+            });
+
+            document.title = selectedLang === 'es'
+                ? 'Políticas de privacidad · SozoLabs'
+                : 'Privacy policies · SozoLabs';
+            select.setAttribute('aria-label', selectedLang === 'es' ? 'Idioma' : 'Language');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'es';
+            document.getElementById('languageSelect').value = savedLang;
+            changeLanguage();
+        });
+    </script>
+</body>
+</html>
